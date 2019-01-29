@@ -93,15 +93,6 @@ class List { // 链表
 //    }
 }
 
-// 参考: https://www.jianshu.com/p/cf962aeff643
-// https://blog.csdn.net/biezhihua/article/details/79437867
-
-// 核心解析：
-// 1. 链表对应结点相加时增加前一个结点的进位，并保存下一个结点的进位；除法得进位，模得结果。
-// 2. 两个链表长度不一致时，要处理较长链表剩余的高位和进位计算的值；
-// 3. 如果最高位计算时还产生进位，则还需要添加一个额外结点。
-
-// 解法
 func addTwoNumbers(list1: ListNode?, list2: ListNode?) -> ListNode? {
     var tmp: ListNode?
     var result: ListNode?
@@ -129,11 +120,21 @@ func addTwoNumbers(list1: ListNode?, list2: ListNode?) -> ListNode? {
     return result
 }
 
+// 参考: https://www.jianshu.com/p/cf962aeff643
+// https://blog.csdn.net/biezhihua/article/details/79437867
+// 核心解析：
+// 1. 链表对应结点相加时增加前一个结点的进位，并保存下一个结点的进位；除法得进位，模得结果。
+// 2. 两个链表长度不一致时，要处理较长链表剩余的高位和进位计算的值；
+// 3. 如果最高位计算时还产生进位，则还需要添加一个额外结点。
+
 // 验证
 // 输入：[2,4,3]，[5,6,4]
 // 输出: [7,0,8]
 // 预期结果：[7,0,8]
 // https://leetcode-cn.com/problems/add-two-numbers/
+
+
+/*=====================*/
 
 // 备注参考
 // swift 实现单链表创建、插入、删除 https://www.jianshu.com/p/68de9b3daa13
