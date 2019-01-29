@@ -134,3 +134,9 @@ func addTwoNumbers(list1: ListNode?, list2: ListNode?) -> ListNode? {
 // 输出: [7,0,8]
 // 预期结果：[7,0,8]
 // https://leetcode-cn.com/problems/add-two-numbers/
+
+// 备注参考
+// swift 实现单链表创建、插入、删除 https://www.jianshu.com/p/68de9b3daa13
+// Swift 链表 的制作 使用 https://blog.csdn.net/sunzhenglin2016/article/details/52690860
+
+// 本题目的问题在于验证步骤，如何在Swift中以链表的形式进行验证该方法是否可以通过，leetcode-cn上验证可以通过，但是省去了验证输入的步骤，需要重新补上
