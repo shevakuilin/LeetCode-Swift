@@ -24,16 +24,13 @@ func lengthOfLongestSubstring(_ s: String) -> Int {
     var start: Int = 0
     var maxLength: Int = 0
     var usedChar: [Character:Int] = [:]
-    var index: Int = 0
-
-    for char in s {
+    for (index, char) in s.enumerated() { // 使用 enumerated(）时需要注意，下面会加以说明
         if usedChar.keys.contains(char) && start <= usedChar[char]! {
             start = usedChar[char]! + 1
         } else {
             maxLength = max(maxLength, index - start + 1)
         }
         usedChar[char] = index
-        index += 1
     }
     return maxLength
 }
@@ -48,3 +45,33 @@ func lengthOfLongestSubstring(_ s: String) -> Int {
 
 // 验证
 lengthOfLongestSubstring("pwwkew")
+
+// 关于 enumerated()
+// 这个函数会返回一个新的序列，包含了初始序列里的所有元素，以及与元素相对应的编号。
+// 大家都认为它返回的是每一个元素和元素的索引值，但实际上并不是这样的。因为它可以适用于所有序列，而序列是不能保证有索引的，由此可知它返回的并不是索引值。
+// 上面的 index 总是一个整型，从 0 开始，间隔为 1，跟每一个元素逐一对应。对于 Array，这刚好跟它的索引值完全一致，但除此之外的其他所有类型，都不会有这种巧合发生。
+// 所以，仅推荐在 Array 中或者想把它作为一个数字去使用。
+// 当然，针对 String 的直接遍历可以看做是一个数组遍历操作，所以这里使用没有问题。
+
+// 不使用 enumerated() 的实现方式 [原理和enumerated()是相同的]：
+func otherFunc(_ s: String) -> Int {
+    var start: Int = 0
+    var maxLength: Int = 0
+    var usedChar: [Character:Int] = [:]
+    var index: Int = 0
+    for char in s { // 使用 enumerated(）时需要注意，下面会加以说明
+        if usedChar.keys.contains(char) && start <= usedChar[char]! {
+            start = usedChar[char]! + 1
+        } else {
+            maxLength = max(maxLength, index - start + 1)
+        }
+        usedChar[char] = index
+        index += 1
+    }
+    return maxLength
+}
+
+// 验证
+otherFunc("pwwkew")
+
+
