@@ -13,7 +13,8 @@ import UIKit
 // 输出: [1,2]
 // 解释: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。
 
-// 解1，二分法：
+// 解1，二分法
+// 解2，双指针对撞
 
 class Solution {
     func twoSum(_ numbers: [Int], _ target: Int) -> [Int] {
@@ -68,3 +69,4 @@ class Solution {
 
 // 参考：
 // 二分法：https://segmentfault.com/a/1190000008699980
+// 官方题解：https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/solution/liang-shu-zhi-he-ii-shu-ru-you-xu-shu-zu-by-leetco/
