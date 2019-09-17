@@ -70,3 +70,4 @@ class Solution {
 // 参考：
 // 二分法：https://segmentfault.com/a/1190000008699980
 // 官方题解：https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/solution/liang-shu-zhi-he-ii-shu-ru-you-xu-shu-zu-by-leetco/
+// 参考题解：https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/solution/shuang-zhi-zhen-dui-zhuang-er-fen-fa-python-dai-ma/
